@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artistas Posibles — TP Historia de las Artes Visuales</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f5f3ef; color: #1a1a1a; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
+  .header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 1.1rem; opacity: 0.85; font-weight: 300; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 30px 20px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; justify-content: center; }
+  .filter-btn { padding: 8px 18px; border: 2px solid #1a1a2e; background: transparent; border-radius: 25px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; }
+  .filter-btn:hover, .filter-btn.active { background: #1a1a2e; color: white; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.25s; border: 1px solid #eae7e0; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+  .card-body { padding: 24px; }
+  .card h2 { font-size: 1.25rem; margin-bottom: 4px; color: #1a1a2e; }
+  .card .born { font-size: 0.85rem; color: #666; margin-bottom: 10px; }
+  .card .media { font-size: 0.8rem; color: #0f3460; background: #eef2f7; display: inline-block; padding: 3px 10px; border-radius: 12px; margin-bottom: 12px; }
+  .card .desc { font-size: 0.9rem; color: #444; margin-bottom: 14px; }
+  .card .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+  .tag { background: #f0ede8; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; color: #555; }
+  .card .works-title { font-size: 0.85rem; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+  .card ul { list-style: none; margin-bottom: 14px; }
+  .card li { font-size: 0.85rem; padding: 4px 0; border-bottom: 1px solid #f0ede8; }
+  .card li:last-child { border-bottom: none; }
+  .card li a { color: #0f3460; text-decoration: none; }
+  .card li a:hover { text-decoration: underline; }
+  .card .link-btn { display: inline-block; padding: 8px 16px; background: #1a1a2e; color: white; text-decoration: none; border-radius: 8px; font-size: 0.8rem; font-weight: 600; transition: background 0.2s; }
+  .card .link-btn:hover { background: #0f3460; }
+  .counter { text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+  @media (max-width: 640px) { .header { padding: 40px 20px; } .header h1 { font-size: 1.5rem; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Artistas Posibles · TP Final</h1>
+  <p>Historia de las Artes Plásticas IV — Fotografía y prácticas artísticas contemporáneas</p>
+  <p style="margin-top:12px;font-size:0.9rem;opacity:0.7;">33 artistas · Click en obra para ver imagen · Perfiles para elegir obra a reseñar</p>
+</div>
+<div class="container">
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="pintura">Pintura</button>
+    <button class="filter-btn" data-filter="textil">Textil / Bordado</button>
+    <button class="filter-btn" data-filter="escultura">Escultura / Instalación</button>
+    <button class="filter-btn" data-filter="performance">Performance</button>
+    <button class="filter-btn" data-filter="video">Video / Multimedia</button>
+    <button class="filter-btn" data-filter="fotografia">Fotografía</button>
+    <button class="filter-btn" data-filter="dibujo">Dibujo</button>
+    <button class="filter-btn" data-filter="argentina">Argentinos</button>
+  </div>
+  <div class="counter" id="counter">33 artistas</div>
+  <div class="grid" id="grid">
+
+    <div class="card" data-tags="textil memoria territorio ancestral consumo">
+      <div class="card-body">
+        <h2>María Candelaria Traverso</h2>
+        <div class="born">Córdoba, Argentina, 1991</div>
+        <div class="media">Textil, tejido, bordado, escultura blanda, instalación</div>
+        <div class="desc">Su práctica artística surge de los vínculos con los territorios que habita. Trabaja con saberes ancestrales, espacios informales como ferias y mercados, el trabajo ambulante y el desplazamiento. Sus tejidos y mantas-mapas exploran el tiempo, el consumo y la memoria encarnada en los objetos.</div>
+        <div class="tags"><span class="tag">textil</span><span class="tag">memoria</span><span class="tag">territorio</span><span class="tag">ancestral</span><span class="tag">consumo</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://herlitzkafaria.com/es/artistas/candelaria-traverso/obras" target="_blank">Mantas mapas (Serie)</a> — Patchwork de prendas, bordado, apliques</li><li><a href="https://herlitzkafaria.com/es/artistas/candelaria-traverso/obras" target="_blank">Chakanas</a> — Tejido geométrico, simbología andina</li><li><a href="https://herlitzkafaria.com/es/artistas/candelaria-traverso/obras" target="_blank">Sellos</a> — Textil</li></ul>
+        <a class="link-btn" href="https://herlitzkafaria.com/es/artistas/candelaria-traverso/biografia" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="mapuche feminismo género performance cuerpo identidad">
+      <div class="card-body">
+        <h2>Seba Calfuqueo</h2>
+        <div class="born">Santiago de Chile, 1991</div>
+        <div class="media">Performance, instalación, cerámica, video, fotografía, pintura</div>
+        <div class="desc">Artista mapuche trans y curadora. Su obra parte de su herencia cultural mapuche para revisar dinámicas sociales, culturales y políticas del Chile actual, cruzando feminismo, estudios de género y derechos ambientales. Forma parte del colectivo mapuche Rangiñtulewfü.</div>
+        <div class="tags"><span class="tag">mapuche</span><span class="tag">feminismo</span><span class="tag">género</span><span class="tag">performance</span><span class="tag">cuerpo</span><span class="tag">identidad</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://sebacalfuqueo.com/en/home/" target="_blank">Esporas (Serie)</a> — Fotografía: fusión cuerpo humano con líquenes, musgos, piedras</li><li><a href="https://sebacalfuqueo.com/en/home/" target="_blank">Historias de Extracción del Cobre</a> — Acrílico iridiscente y bordado con hilo cobrizo sobre lienzo, 2024</li><li><a href="https://sebacalfuqueo.com/en/murke-ko-2016/" target="_blank">Mürke Ko</a> — Instalación, 2016</li><li><a href="https://sebacalfuqueo.com/en/gato-por-liebre-2016/" target="_blank">Gato por liebre</a> — Escultura, 2016</li></ul>
+        <a class="link-btn" href="https://sebacalfuqueo.com/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="pintura domesticidad gótico clase media interiores">
+      <div class="card-body">
+        <h2>Verónica Gómez</h2>
+        <div class="born">Buenos Aires, 1978</div>
+        <div class="media">Pintura, instalación, dibujo</div>
+        <div class="desc">Su obra intersecta la pintura metafísica de Spilimbergo, el terror gótico y la clase media argentina de mediados del siglo XX. Crea atmósferas domésticas inquietantes donde lo ornamental y lo siniestro coexisten. Su serie 'La casa de las niñas inusuales' explora la movilidad social ascendente.</div>
+        <div class="tags"><span class="tag">pintura</span><span class="tag">domesticidad</span><span class="tag">gótico</span><span class="tag">clase media</span><span class="tag">interiores</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://veronica-gomez.com.ar/en/the-impossible-appointment" target="_blank">La casa de las niñas inusuales</a> — Pintura/instalación</li><li><a href="https://veronica-gomez.com.ar/en/the-impossible-appointment" target="_blank">The Impossible Appointment</a> — Instalación 17m, 2009, Lyon</li><li><a href="https://cottgallery.art/en/artists/veronica-gomez" target="_blank">The Dangerous Garments</a> — Exposición COTT Gallery, 2024</li></ul>
+        <a class="link-btn" href="https://cottgallery.art/en/artists/veronica-gomez" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="abstracción geométrica queer feminismo utopía color">
+      <div class="card-body">
+        <h2>Ad Minoliti</h2>
+        <div class="born">Buenos Aires, 1980</div>
+        <div class="media">Pintura, instalación, escultura blanda, textil, mural, animación</div>
+        <div class="desc">Artista no binarie que explora la abstracción geométrica como lenguaje insurgente, fusionando teoría feminista y queer, ciencia ficción y el legado de la abstracción latinoamericana. Crea entornos vibrantes, modulares y sensoriales como laboratorios pedagógicos de emancipación y deseo.</div>
+        <div class="tags"><span class="tag">abstracción geométrica</span><span class="tag">queer</span><span class="tag">feminismo</span><span class="tag">utopía</span><span class="tag">color</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.bienalmercosul.art.br/es/bienal-14-artistas/ad-minoliti" target="_blank">Hongos de fantasías geométricas</a> — Instalación site-specific, 14ª Bienal del Mercosur, 2025</li><li><a href="https://en.wikipedia.org/wiki/Ad_Minoliti" target="_blank">Fantasías geométricas</a> — Pintura e instalación</li><li><a href="https://en.wikipedia.org/wiki/Ad_Minoliti" target="_blank">Architecture of the Ultrasocial</a> — Instalación con esculturas blandas y textiles</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Ad_Minoliti" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="pintura sobre vidrio pop superhéroes brillantina modular">
+      <div class="card-body">
+        <h2>Benito Laren</h2>
+        <div class="born">Artista contemporáneo</div>
+        <div class="media">Acrílico sobre vidrio con brillantina, pintura</div>
+        <div class="desc">Trabaja con pintura acrílica sobre vidrio incorporando brillantina, explorando la cultura pop y los superhéroes a través de superficies reflectantes y coloridas. Sus obras incluyen polípticos modulares de hasta 114 piezas separadas.</div>
+        <div class="tags"><span class="tag">pintura sobre vidrio</span><span class="tag">pop</span><span class="tag">superhéroes</span><span class="tag">brillantina</span><span class="tag">modular</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artsy.net/artwork/benito-laren-batman-y-robin" target="_blank">Batman y Robin</a> — Acrílico sobre vidrio, 2019</li><li><a href="https://artsy.net/artwork/benito-laren-poliptico" target="_blank">Políptico</a> — 114 piezas acrílico sobre vidrio, 2019</li><li><a href="https://artsy.net/artwork/benito-laren-guirnaldas" target="_blank">Guirnaldas</a> — Acrílico sobre vidrio con brillantina, 2017</li></ul>
+        <a class="link-btn" href="https://artsy.net/artist/benito-laren" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="collage montaje archivo conocimiento tecnología">
+      <div class="card-body">
+        <h2>Martín Legón</h2>
+        <div class="born">Buenos Aires, 1978</div>
+        <div class="media">Collage, assemblage, video, instalación, objeto, publicación</div>
+        <div class="desc">Explora los contrastes y coincidencias inesperadas entre historia del arte, ciencia, educación y cultura visual. Usa el montaje como herramienta crítica para conectar mundos distantes y cuestionar cómo construimos conocimiento, qué consumimos y cómo nos relacionamos con las imágenes.</div>
+        <div class="tags"><span class="tag">collage</span><span class="tag">montaje</span><span class="tag">archivo</span><span class="tag">conocimiento</span><span class="tag">tecnología</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://museomoderno.org/en/exhibitions/martin-legon/" target="_blank">Solo las piedras recuerdan</a> — Exposición Museo Moderno, Buenos Aires, 2024</li><li><a href="https://www.artealdia.com/Reviews/Martin-Legon-Las-fuerzas-productivas.-Barro-Arte-Contemporaneo-Buenos-Aires" target="_blank">Las fuerzas productivas</a> — Instalación, 2015. 18.000 fotografías anónimas</li><li><a href="https://www.barro.cc/en/artists/8/martin-legon" target="_blank">Nuevo Realismo Series</a> — Collage/assemblage, 2023</li></ul>
+        <a class="link-btn" href="https://www.barro.cc/en/artists/8/martin-legon" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="pintura memoria modernidad fotografía Tucumán">
+      <div class="card-body">
+        <h2>Agustín González Goytía</h2>
+        <div class="born">Tucumán, Argentina</div>
+        <div class="media">Pintura (acrílico, látex, técnica mixta sobre tela sin imprimar)</div>
+        <div class="desc">Su interés radica en la persistencia de la modernidad y la memoria artística argentina. Recolecta imágenes de la cultura visual de fines del XIX y principios del XX (postales, álbumes fotográficos, pinturas locales) y las tensiona a través del lenguaje pictórico, en lienzos borroneados y gigantes.</div>
+        <div class="tags"><span class="tag">pintura</span><span class="tag">memoria</span><span class="tag">modernidad</span><span class="tag">fotografía</span><span class="tag">Tucumán</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.linsegaleria.com/agust%C3%ADn-gonz%C3%A1lez-goyt%C3%ADa" target="_blank">Retroespectro N°1-6</a> — Técnica mixta sobre tela, 260-317 cm, 2024</li><li><a href="https://agustingonzalezgoytia.com/obras/" target="_blank">Portón Nº1 y Nº2</a> — Acrílico sobre papel, 2013</li><li><a href="https://agustingonzalezgoytia.com/obras/" target="_blank">Glorieta</a> — Acrílico y látex sobre lienzo sin imprimar, 2022</li></ul>
+        <a class="link-btn" href="https://agustingonzalezgoytia.com/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura ornamento nocturno simulacro diseño comercial Mar del Plata">
+      <div class="card-body">
+        <h2>Daniel Basso</h2>
+        <div class="born">Mar del Plata, 1974</div>
+        <div class="media">Escultura, instalación, fotografía</div>
+        <div class="desc">Su obra evoca el recuerdo agridulce de la costa atlántica, la noche y su alegría vacua, la belleza cotidiana del diseño comercial. Construye simulacros habitables entre la escultura, la arquitectura y el puro ornamento, inspirado en la estética de los boliches nocturnos marplatenses de los 90.</div>
+        <div class="tags"><span class="tag">escultura</span><span class="tag">ornamento</span><span class="tag">nocturno</span><span class="tag">simulacro</span><span class="tag">diseño comercial</span><span class="tag">Mar del Plata</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://museomoderno.org/en/exhibitions/daniel-basso-terciopelo-club" target="_blank">Terciopelo Club</a> — Instalación, Museo Moderno de Buenos Aires, 2025</li><li><a href="https://www.calvaresicontemporaneo.com/daniel-basso-1" target="_blank">Farola.Tapiz.Túnica</a> — Escultura, 2019</li><li><a href="https://www.calvaresicontemporaneo.com/daniel-basso-1" target="_blank">Bombonera</a> — Instalación, Calvaresi, 2022</li></ul>
+        <a class="link-btn" href="https://www.calvaresicontemporaneo.com/daniel-basso-1" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura desechos ecología tecnología orgánico">
+      <div class="card-body">
+        <h2>Eva Moro Cafiero</h2>
+        <div class="born">La Plata, Argentina, 2002</div>
+        <div class="media">Escultura, instalación con desechos orgánicos y tecnológicos</div>
+        <div class="desc">Joven artista platense que trabaja con desechos orgánicos y tecnológicos para crear esculturas con formas curvas de caños de aluminio, ramas de árboles nativos, pantallas de tablets recuperadas, semillas y discos rígidos. Cuestiona los parentescos ecológicos insólitos e incómodos.</div>
+        <div class="tags"><span class="tag">escultura</span><span class="tag">desechos</span><span class="tag">ecología</span><span class="tag">tecnología</span><span class="tag">orgánico</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://contemporaryartnow.com/madrid/en/artistas/eva-moro-cafiero" target="_blank">Mareo de Gemas, miedos de crepúsculo</a> — Escultura con desechos orgánicos y tecnológicos, 2026</li><li><a href="https://contemporaryartnow.com/madrid/en/artistas/eva-moro-cafiero" target="_blank">Obras en Espacio Andreani</a> — Esculturas comisionadas con desechos, 2026</li></ul>
+        <a class="link-btn" href="https://mapadelarte.museomoderno.org/en/artistas/moro-cafiero-eva" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="wichí textil colectivo artesanía resistencia punto yica">
+      <div class="card-body">
+        <h2>Claudia Alarcón & Silät</h2>
+        <div class="born">Salta, Argentina, 1989</div>
+        <div class="media">Textil, tejido en fibra de chaguar (punto yica), instalación</div>
+        <div class="desc">Artista textil wichí que lidera el colectivo Silät, integrado por 100 mujeres tejedoras de comunidades wichí del Gran Chaco. Su trabajo utiliza la técnica del punto yica, tradicionalmente usado para bolsos, y lo lleva al ámbito museístico. Estuvo presente en la Bienal de Venecia 2024 y el Guggenheim Bilbao.</div>
+        <div class="tags"><span class="tag">wichí</span><span class="tag">textil</span><span class="tag">colectivo</span><span class="tag">artesanía</span><span class="tag">resistencia</span><span class="tag">punto yica</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artnews.com/art-news/artists/claudia-alarcon-silat-weaving-venice-biennale-james-cohan-1234740421" target="_blank">Un coro de yicas</a> — 100 bolsos tejidos instalación mural, 2024</li><li><a href="https://artnews.com/art-news/artists/claudia-alarcon-silat-weaving-venice-biennale-james-cohan-1234740421" target="_blank">¡Nuestra fuerza es unirnos! (Olahiajutejwek)</a> — Tejido en punto yica, 2024</li><li><a href="https://artnews.com/art-news/artists/claudia-alarcon-silat-weaving-venice-biennale-james-cohan-1234740421" target="_blank">Serie abstracta wichí</a> — Tejido en chaguar, punto yica</li></ul>
+        <a class="link-btn" href="https://artnews.com/art-news/artists/claudia-alarcon-silat-weaving-venice-biennale-james-cohan-1234740421" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="textil telar andino digital error traducción">
+      <div class="card-body">
+        <h2>Guido Yannitto</h2>
+        <div class="born">Argentina, 1981</div>
+        <div class="media">Textil, tapiz, dibujo, video, instalación, cerámica</div>
+        <div class="desc">Explora el telar criollo y el tejido andino, examinando sus principios a través de cambios de materiales, colores y estructuras. Su obra se mueve entre las tradiciones orales del tejido manual y la naturaleza industrial del telar jacquard. Investiga errores digitales convertidos en hilo físico.</div>
+        <div class="tags"><span class="tag">textil</span><span class="tag">telar</span><span class="tag">andino</span><span class="tag">digital</span><span class="tag">error</span><span class="tag">traducción</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://studiovoltaire.org/whats-on/guido-yannitto-residency" target="_blank">To Hack the Loom</a> — Proyecto, Studio Voltaire, Londres, 2026</li><li><a href="https://mapadelarte.museomoderno.org/en/artistas/yannitto-guido" target="_blank">Laguna</a> — Exposición individual, Galería Gachi Prieto, 2019</li><li><a href="https://mapadelarte.museomoderno.org/en/artistas/yannitto-guido" target="_blank">Zonda</a> — Exposición Centro Cultural Recoleta, 2015</li></ul>
+        <a class="link-btn" href="http://guidoyannitto.com/en/cv" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="medios manipulación realidad fetichismo China">
+      <div class="card-body">
+        <h2>Wang Du</h2>
+        <div class="born">Wuhan, China, 1956. Vive en París</div>
+        <div class="media">Escultura, instalación, fotografía, multimedia</div>
+        <div class="desc">Artista chino residente en París. Su obra se centra en la relación entre los medios de comunicación y la conciencia pública, y la manipulación que ejercen los medios. Crea esculturas tridimensionales derivadas de imágenes de revistas y periódicos arrugados, explorando el fetichismo posmoderno.</div>
+        <div class="tags"><span class="tag">medios</span><span class="tag">manipulación</span><span class="tag">realidad</span><span class="tag">fetichismo</span><span class="tag">China</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artsy.net/show/tang-contemporary-art-wang-du-post-fetishism/info" target="_blank">Post-Fetishism</a> — Instalación, Tang Contemporary Art, 2016</li><li><a href="https://en.wikipedia.org/wiki/Wang_Du_(artist)" target="_blank">Disposable Reality</a> — Esculturas 3D de imágenes de revista, 2000</li><li><a href="https://en.wikipedia.org/wiki/Wang_Du_(artist)" target="_blank">International Kebab</a> — Instalación, Tang Contemporary Art, 2008</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Wang_Du_(artist)" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura naturaleza agua proceso arte povera precariedad">
+      <div class="card-body">
+        <h2>Katinka Bock</h2>
+        <div class="born">Frankfurt, Alemania, 1976</div>
+        <div class="media">Escultura, instalación in situ, arte povera, postminimalismo</div>
+        <div class="desc">Artista alemana que trabaja con procesos transformativos entre elementos naturales y artificiales. Usa materiales reciclados y naturales (arcilla, madera, tela, agua, sal) puestos en situaciones precarias. El agua y los movimientos fluidos son centrales en su obra, que explora la percepción del espacio y el tiempo.</div>
+        <div class="tags"><span class="tag">escultura</span><span class="tag">naturaleza</span><span class="tag">agua</span><span class="tag">proceso</span><span class="tag">arte povera</span><span class="tag">precariedad</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://en.wikipedia.org/wiki/Katinka_Bock" target="_blank">T-toxic</a> — Madera de roble y bronce, 2019</li><li><a href="https://en.wikipedia.org/wiki/Katinka_Bock" target="_blank">Hysteros</a> — Módulo de madera reaccionando al agua del río</li><li><a href="https://en.wikipedia.org/wiki/Katinka_Bock" target="_blank">Farben dieses Meeres Balance</a> — Móviles sobre limones</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Katinka_Bock" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="interespecies ecología biología dibujo compost no humano">
+      <div class="card-body">
+        <h2>Virginia Buitrón</h2>
+        <div class="born">Quilmes, Argentina, 1977</div>
+        <div class="media">Instalación, fotografía, video, objetos, acción</div>
+        <div class="desc">Trabaja con la agencia de organismos no humanos y vínculos interespecies. Crea dispositivos de dibujo con larvas de mosca soldado negra (Hermetia Illucens), que producen dibujos mientras se alimentan de residuos orgánicos. Explora una relación simbiótica entre arte, ecología y procesos biológicos.</div>
+        <div class="tags"><span class="tag">interespecies</span><span class="tag">ecología</span><span class="tag">biología</span><span class="tag">dibujo</span><span class="tag">compost</span><span class="tag">no humano</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://virginiab.ar/dispositivo-de-dibujo-interespecies/" target="_blank">Dispositivo de Dibujo Interespecies</a> — Instalación-hábitat con larvas Hermetia Illucens, 2019</li><li><a href="https://virginiab.ar/bio-2/" target="_blank">QK2022</a> — Dispositivo presentado en Documenta 15, Kassel</li><li><a href="https://virginiab.ar/" target="_blank">Serie Interespecies</a> — Fotografía e instalación</li></ul>
+        <a class="link-btn" href="https://virginiab.ar/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="poscolonial identidad Dutch wax colonialismo raza maniquí">
+      <div class="card-body">
+        <h2>Yinka Shonibare CBE</h2>
+        <div class="born">Londres, 1962. Vive y trabaja en Londres</div>
+        <div class="media">Escultura, instalación, fotografía, textil (Dutch wax), film</div>
+        <div class="desc">Artista británico-nigeriano conocido por usar telas Dutch wax (supuestamente africanas, pero originadas en Indonesia/industria textil holandesa) para cuestionar la autenticidad cultural, el colonialismo y el capitalismo global. Sus maniquíes sin cabeza con ropas victorianas de telas africanas exploran la identidad poscolonial.</div>
+        <div class="tags"><span class="tag">poscolonial</span><span class="tag">identidad</span><span class="tag">Dutch wax</span><span class="tag">colonialismo</span><span class="tag">raza</span><span class="tag">maniquí</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://yinkashonibare.com/" target="_blank">Nelson's Ship in a Bottle</a> — Escultura en botella gigante con tela Dutch wax, 2010</li><li><a href="https://yinkashonibare.com/" target="_blank">The British Library</a> — Instalación, 2014</li><li><a href="https://yinkashonibare.com/" target="_blank">Refugee Astronaut</a> — Maniquí fibra de vidrio, textil Dutch wax, 2024</li></ul>
+        <a class="link-btn" href="https://yinkashonibare.com/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="China transformación social internet virtual trabajo utopía">
+      <div class="card-body">
+        <h2>Cao Fei</h2>
+        <div class="born">Guangzhou, China, 1978</div>
+        <div class="media">Video, instalación, performance, realidad virtual, multimedia</div>
+        <div class="desc">Una de las artistas chinas más prominentes. Su obra examina la vida cotidiana de los ciudadanos chinos nacidos después de la Revolución Cultural, la cultura de internet, la rápida transformación social de China y el impacto de las influencias extranjeras. Combina comentario social y estética pop surrealista.</div>
+        <div class="tags"><span class="tag">China</span><span class="tag">transformación social</span><span class="tag">internet</span><span class="tag">virtual</span><span class="tag">trabajo</span><span class="tag">utopía</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://en.wikipedia.org/wiki/Cao_Fei" target="_blank">Whose Utopia</a> — Video instalación sobre trabajadores fabriles, 2006</li><li><a href="https://en.wikipedia.org/wiki/Cao_Fei" target="_blank">RMB City</a> — Ciudad virtual en Second Life, 2008-2011</li><li><a href="https://ucca.org.cn/en/exhibition/cao-fei" target="_blank">Nova</a> — Film ciencia ficción, 2019</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Cao_Fei" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="política sonido música poder colonialismo territorio">
+      <div class="card-body">
+        <h2>Allora & Calzadilla</h2>
+        <div class="born">Jennifer Allora (EEUU, 1974) y Guillermo Calzadilla (Cuba, 1971)</div>
+        <div class="media">Performance, escultura, sonido, video, fotografía</div>
+        <div class="desc">Dúo colaborativo radicado en Puerto Rico. Investigan las intersecciones entre historia, cultura material y política. Trabajan la tensión entre música y poder, los rastros coloniales en el territorio, y las relaciones entre humanos y no-humanos. Representaron a EEUU en la Bienal de Venecia 2011.</div>
+        <div class="tags"><span class="tag">política</span><span class="tag">sonido</span><span class="tag">música</span><span class="tag">poder</span><span class="tag">colonialismo</span><span class="tag">territorio</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://en.wikipedia.org/wiki/Allora_%26_Calzadilla" target="_blank">Stop, Repair, Prepare: Variations on 'Ode to Joy' for a Prepared Piano</a> — Piano preparado sobre ruedas, 2008</li><li><a href="https://en.wikipedia.org/wiki/Allora_%26_Calzadilla" target="_blank">Land Mark</a> — Video/fotografía sobre Vieques y operaciones militares, 1999-2006</li><li><a href="https://en.wikipedia.org/wiki/Allora_%26_Calzadilla" target="_blank">The Great Silence</a> — Film sobre el telescopio de Arecibo, 2014</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Allora_%26_Calzadilla" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="dibujo escritura edición copia memoria fragmento">
+      <div class="card-body">
+        <h2>Lucas Di Pascuale</h2>
+        <div class="born">Córdoba, Argentina, 1968</div>
+        <div class="media">Dibujo, escritura, edición, instalación</div>
+        <div class="desc">Su práctica se desarrolla entre los límites del dibujo, la escritura y la lectura; entre la práctica editorial y la docencia. Le interesa la copia y la ausencia del original, lo autobiográfico, la técnica como concepto y lo inacabado. El montaje funciona como lugar de memoria y vacío.</div>
+        <div class="tags"><span class="tag">dibujo</span><span class="tag">escritura</span><span class="tag">edición</span><span class="tag">copia</span><span class="tag">memoria</span><span class="tag">fragmento</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://hachegaleria.com/en/exhibicion/microcromatismo_" target="_blank">Microcromatismo</a> — Témpera y lápiz sobre papel, Hache Galería, 2024</li><li><a href="https://hachegaleria.com/en/artista/lucas-di-pascuale_" target="_blank">Querido margen</a> — Dibujo, Hache Galería, 2019/2021</li><li><a href="https://hachegaleria.com/en/artista/lucas-di-pascuale_" target="_blank">2222</a> — Instalación, Museo Bonfiglioli, 2017</li></ul>
+        <a class="link-btn" href="https://hachegaleria.com/en/artista/lucas-di-pascuale_" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="video arte Colombia historia colonialismo violencia religión">
+      <div class="card-body">
+        <h2>José Alejandro Restrepo</h2>
+        <div class="born">Colombia, 1959</div>
+        <div class="media">Video instalación, multimedia, fotografía</div>
+        <div class="desc">Artista colombiano pionero del videoarte en Latinoamérica. Su obra aborda la historia de Colombia y América Latina, la violencia, la religión y el colonialismo. Utiliza múltiples canales de video para confrontar las narrativas históricas oficiales con las realidades del presente.</div>
+        <div class="tags"><span class="tag">video arte</span><span class="tag">Colombia</span><span class="tag">historia</span><span class="tag">colonialismo</span><span class="tag">violencia</span><span class="tag">religión</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://emuseum.mfah.org/objects/119849/paso-del-quindio-i" target="_blank">Paso del Quindío I</a> — Video instalación 3 canales, 1992</li><li><a href="https://emuseum.mfah.org/people/35409/jose-alejandro-restrepo/objects" target="_blank">El caballero de la fe</a> — Video un canal, 2011</li></ul>
+        <a class="link-btn" href="https://emuseum.mfah.org/people/35409/jose-alejandro-restrepo/objects" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="tecnología historia pintura sonido dispositivos hacker">
+      <div class="card-body">
+        <h2>Rodolfo Marqués</h2>
+        <div class="born">Buenos Aires, Argentina, 1982</div>
+        <div class="media">Pintura, instalación, escultura sonora, dispositivos mecánicos, electrónica</div>
+        <div class="desc">Fusiona pintura, tecnología e historia argentina mediante instalaciones, esculturas sonoras y dispositivos mecánicos con componentes electrónicos y referencias a la cultura pop. Su enfoque 'hacker' interrumpe procesos de pensamiento convencionales. Dirige NBA – Nueva Bibliofilia Argentina.</div>
+        <div class="tags"><span class="tag">tecnología</span><span class="tag">historia</span><span class="tag">pintura</span><span class="tag">sonido</span><span class="tag">dispositivos</span><span class="tag">hacker</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artsandculture.google.com/story/aQUBKDBHESm7mA" target="_blank">En Cokaygne se come y se bebe sin preocupaciones</a> — Objeto/pintura con técnica de yeso, 2022</li><li><a href="https://bienalsur.org/en/artistas/3001" target="_blank">Masao Gallery</a> — Proyecto expositivo</li><li><a href="https://bienalsur.org/en/artistas/3001" target="_blank">NBA – Nueva Bibliofilia Argentina</a> — Proyecto editorial de artes gráficas</li></ul>
+        <a class="link-btn" href="https://bienalsur.org/en/artistas/3001" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="dibujo animación apartheid memoria historia Sudáfrica">
+      <div class="card-body">
+        <h2>William Kentridge</h2>
+        <div class="born">Johannesburgo, Sudáfrica, 1955</div>
+        <div class="media">Dibujo, grabado, cine animado, performance, ópera, escultura</div>
+        <div class="desc">Artista sudafricano de renombre mundial. Crea películas animadas a partir de dibujos al carbón que borra y redibuja, explorando la memoria, la historia del apartheid, la justicia social y los procesos creativos. Su obra abarca dibujo, grabado, teatro, ópera y performance.</div>
+        <div class="tags"><span class="tag">dibujo</span><span class="tag">animación</span><span class="tag">apartheid</span><span class="tag">memoria</span><span class="tag">historia</span><span class="tag">Sudáfrica</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.kentridge.studio/" target="_blank">The Nose</a> — Animación/grabado basado en Gogol, 2010</li><li><a href="https://www.moma.org/artists/7919" target="_blank">I am not me, the horse is not mine</a> — Performance, MoMA, 2010</li><li><a href="https://www.kentridge.studio/" target="_blank">The Refusal of Time</a> — Video instalación, Documenta, 2012</li></ul>
+        <a class="link-btn" href="https://www.kentridge.studio/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="acuarela queer indígena sincretismo Virgen Pachamama trans">
+      <div class="card-body">
+        <h2>La Chola Poblete</h2>
+        <div class="born">Guaymallén, Mendoza, Argentina, 1989</div>
+        <div class="media">Acuarela, performance, escultura, fotografía, video</div>
+        <div class="desc">Artista trans argentina de ascendencia boliviana. Pinta acuarelas monumentales donde fusiona la Virgen María con la Pachamama, combinando iconografía religiosa con exceso queer y carnavalesco. Su alter ego 'La Chola' resignifica un término despectivo. Recibió mención especial en la Bienal de Venecia 2024.</div>
+        <div class="tags"><span class="tag">acuarela</span><span class="tag">queer</span><span class="tag">indígena</span><span class="tag">sincretismo</span><span class="tag">Virgen</span><span class="tag">Pachamama</span><span class="tag">trans</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://zeitcontemporaryart.com/artists/la-chola-poblete" target="_blank">Vírgenes Cholas</a> — Acuarela 200x152 cm, Bienal de Venecia 2024</li><li><a href="https://zeitcontemporaryart.com/artists/la-chola-poblete" target="_blank">Ejercicios del llanto</a> — Exposición Museo Moderno Buenos Aires, 2022</li><li><a href="https://zeitcontemporaryart.com/artists/la-chola-poblete" target="_blank">Guaymallén</a> — Exposición Deutsche Bank Artist of the Year, 2023</li></ul>
+        <a class="link-btn" href="https://zeitcontemporaryart.com/artists/la-chola-poblete" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura tensión materiales cuerpo construcción destrucción">
+      <div class="card-body">
+        <h2>Luciana Lamothe</h2>
+        <div class="born">Buenos Aires, 1975</div>
+        <div class="media">Escultura, performance, instalación participativa, video, dibujo</div>
+        <div class="desc">Investiga la tensión entre dureza-blandura de los materiales de construcción (maderas, metales, andamios). Somete los materiales al límite para potenciar su agencia, proponiendo el concepto de 'transmaterialidad'. Sus obras participativas integran el cuerpo del espectador en estructuras precarias y vibrantes.</div>
+        <div class="tags"><span class="tag">escultura</span><span class="tag">tensión</span><span class="tag">materiales</span><span class="tag">cuerpo</span><span class="tag">construcción</span><span class="tag">destrucción</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://lucianalamothe.com/es/obras-participativas/" target="_blank">Amorfa</a> — Performance/instalación callejera con maderas fenólicas, 2023</li><li><a href="https://lucianalamothe.com/es/biografia/" target="_blank">Brutal Ambivalence</a> — Caños y abrazaderas de andamio, Art Basel Miami 2019</li><li><a href="https://lucianalamothe.com/es/obras-participativas/" target="_blank">Repetición x Quiebre</a> — Túnel de maderas quebradas, BIENALSUR 2021</li></ul>
+        <a class="link-btn" href="https://lucianalamothe.com/es/biografia/" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="Pictures Generation fotografía contexto mercado museo apropiación">
+      <div class="card-body">
+        <h2>Louise Lawler</h2>
+        <div class="born">Bronxville, NY, EEUU, 1947</div>
+        <div class="media">Fotografía, instalación, sonido</div>
+        <div class="desc">Miembro de la Pictures Generation. Fotografía obras de otros artistas en museos, depósitos, casas de subastas y colecciones privadas para cuestionar la producción, circulación y presentación del arte. Examina cómo el significado de una obra cambia según el contexto de su exhibición.</div>
+        <div class="tags"><span class="tag">Pictures Generation</span><span class="tag">fotografía</span><span class="tag">contexto</span><span class="tag">mercado</span><span class="tag">museo</span><span class="tag">apropiación</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.moma.org/artists/7928" target="_blank">Does Andy Warhol Make You Cry?</a> — Fotografía, 1988</li><li><a href="https://www.moma.org/artists/7928" target="_blank">Big (adjusted to fit)</a> — Fotografía instalación site-specific, 2002/2016</li><li><a href="https://www.moma.org/artists/7928" target="_blank">Birdcalls</a> — Obra sonora, 1972/1981</li></ul>
+        <a class="link-btn" href="https://www.moma.org/artists/7928" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="instalación tiempo exposición como medio sonido luz guión espacial">
+      <div class="card-body">
+        <h2>Philippe Parreno</h2>
+        <div class="born">Orán, Argelia, 1964. Vive y trabaja en París</div>
+        <div class="media">Instalación site-specific, film, performance, sonido, luz, escultura</div>
+        <div class="desc">Concibe la exposición como un medio en sí mismo, un espacio guionado orquestado por sonido e imagen. Crea entornos vivos y mutantes que transforman la experiencia del visitante. Trabaja la expansión del tiempo, la memoria y la narración no lingüística. Hyundai Commission Tate Modern 2016.</div>
+        <div class="tags"><span class="tag">instalación</span><span class="tag">tiempo</span><span class="tag">exposición como medio</span><span class="tag">sonido</span><span class="tag">luz</span><span class="tag">guión espacial</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://en.wikipedia.org/wiki/Philippe_Parreno" target="_blank">Anywhere, Anywhere Out of the World</a> — Palais de Tokyo completo transformado, 2013</li><li><a href="https://en.wikipedia.org/wiki/Philippe_Parreno" target="_blank">No Ghost Just a Shell</a> — Proyecto colaborativo con Pierre Huyghe, 1999</li><li><a href="https://moma.org/artists/28190-philippe-parreno" target="_blank">Echo</a> — Autómata autopoiético, MoMA, 2019</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Philippe_Parreno" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura inmersión tensión suspensión materia naturaleza">
+      <div class="card-body">
+        <h2>Eduardo Basualdo</h2>
+        <div class="born">Buenos Aires, 1977</div>
+        <div class="media">Escultura, instalación, dibujo</div>
+        <div class="desc">Explora los límites entre realidad y ficción, percepción y colapso a través de esculturas e instalaciones inmersivas. Sus obras crean atmósferas de tensión, suspensión e inminencia, interrumpiendo el orden acelerado de la vida cotidiana. Trabaja con materialidad bruta y fuerzas invisibles.</div>
+        <div class="tags"><span class="tag">escultura</span><span class="tag">inmersión</span><span class="tag">tensión</span><span class="tag">suspensión</span><span class="tag">materia</span><span class="tag">naturaleza</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.luisastrina.com.br/en/artists/62-eduardo-basualdo/biography" target="_blank">La Cabeza de Goliat</a> — Instalación, Musée Les Abattoirs, Toulouse, 2018</li><li><a href="https://www.luisastrina.com.br/en/artists/62-eduardo-basualdo/biography" target="_blank">Arena</a> — Instalación, MuBE São Paulo, 2017</li><li><a href="https://www.artnet.com/artists/eduardo-basualdo" target="_blank">Hope and Hole</a> — Escultura, 2009</li></ul>
+        <a class="link-btn" href="https://www.luisastrina.com.br/en/artists/62-eduardo-basualdo/biography" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="sonido video tiempo montaje música The Clock">
+      <div class="card-body">
+        <h2>Christian Marclay</h2>
+        <div class="born">San Rafael, California, 1955</div>
+        <div class="media">Video, performance, escultura, collage sonoro, fotografía</div>
+        <div class="desc">Pionero del turntablism y las intersecciones entre sonido e imagen. Su obra maestra 'The Clock' (2010) es un video de 24 horas sincronizado con la hora real, compuesto por clips cinematográficos que marcan cada minuto del día. Ganó el León de Oro en Venecia 2011.</div>
+        <div class="tags"><span class="tag">sonido</span><span class="tag">video</span><span class="tag">tiempo</span><span class="tag">montaje</span><span class="tag">música</span><span class="tag">The Clock</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://en.wikipedia.org/wiki/Christian_Marclay" target="_blank">The Clock</a> — Video 24h sincronizado, 2010. León de Oro Venecia</li><li><a href="https://en.wikipedia.org/wiki/Christian_Marclay" target="_blank">Telephones</a> — Montaje de 7 min de clips telefónicos, 1995</li><li><a href="https://en.wikipedia.org/wiki/Christian_Marclay" target="_blank">Video Quartet</a> — 4 pantallas mashup musical, 2002</li></ul>
+        <a class="link-btn" href="https://en.wikipedia.org/wiki/Christian_Marclay" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="sustentabilidad aerocene arañas ecología colaboración interespecies vuelo">
+      <div class="card-body">
+        <h2>Tomás Saraceno</h2>
+        <div class="born">San Miguel de Tucumán, Argentina, 1973</div>
+        <div class="media">Instalación interactiva, escultura flotante, arquitectura, colaboración interespecies</div>
+        <div class="desc">Investiga formas sustentables de habitar el ambiente: Ciudades Nube, vuelos aeros solares y redes de araña como instrumentos musicales. Su proyecto Aerocene batió 32 récords mundiales de vuelo sustentable. Colabora con comunidades indígenas, aracnólogos y científicos en obras que proponen una ética de cohabitación planetaria.</div>
+        <div class="tags"><span class="tag">sustentabilidad</span><span class="tag">aerocene</span><span class="tag">arañas</span><span class="tag">ecología</span><span class="tag">colaboración interespecies</span><span class="tag">vuelo</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://art21.org/artist/tomas-saraceno" target="_blank">Fly with Aerocene Pacha</a> — Vuelo aeros solar récord mundial, 2020</li><li><a href="https://art21.org/artist/tomas-saraceno" target="_blank">Cloud Cities</a> — Esculturas flotantes modulares, 2002-presente</li><li><a href="https://art21.org/artist/tomas-saraceno" target="_blank">Hybrid Webs</a> — Telas de araña colaborativas, 2018</li></ul>
+        <a class="link-btn" href="https://art21.org/artist/tomas-saraceno" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="pintura anacronismo historia del arte paisaje ornamento imagen digital">
+      <div class="card-body">
+        <h2>Max Gómez Canle</h2>
+        <div class="born">Buenos Aires, 1972</div>
+        <div class="media">Pintura al óleo, técnica mixta, dibujo, grabado, escultura</div>
+        <div class="desc">Referente ineludible de la pintura contemporánea argentina. Investiga el potencial anacrónico de las imágenes, combinando la historia del arte (desde las vanguardias concretas hasta Goya) con la cultura digital, el paisaje argentino y formas ornamentales. Cita a Fontana, Lozza, Aizenberg.</div>
+        <div class="tags"><span class="tag">pintura</span><span class="tag">anacronismo</span><span class="tag">historia del arte</span><span class="tag">paisaje</span><span class="tag">ornamento</span><span class="tag">imagen digital</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artishockrevista.com/2019/07/18/max-gomez-canle-el-salon-de-los-caprichos" target="_blank">El salón de los caprichos</a> — Antológica Museo Moderno, 2019</li><li><a href="https://www.casatriangulo.com/artists/66-max-gomez-canle" target="_blank">La tregua del agua</a> — Exposición itinerante por Argentina, 2023-2025</li><li><a href="https://www.casatriangulo.com/artists/66-max-gomez-canle" target="_blank">Torres, paisajes celestes y terrenales</a> — Pinturas citando a Aizenberg y Salamone</li></ul>
+        <a class="link-btn" href="https://www.casatriangulo.com/artists/66-max-gomez-canle" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="pintura tren memoria melancolía transporte collage">
+      <div class="card-body">
+        <h2>Patricio Larrambebere</h2>
+        <div class="born">Merlo, Buenos Aires, 1968</div>
+        <div class="media">Pintura, collage, instalación</div>
+        <div class="desc">Su obra está marcada por una obsesión por el tren y todo lo que lo rodea (boletos antiguos, estaciones, acciones ferroviarias) en una especie de memoria cargada de melancolía. Ganador del Premio Klemm (2015). Realizó residencia en la Rijksakademie van Beeldende Kunsten de Ámsterdam.</div>
+        <div class="tags"><span class="tag">pintura</span><span class="tag">tren</span><span class="tag">memoria</span><span class="tag">melancolía</span><span class="tag">transporte</span><span class="tag">collage</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://artehispano.com.ar/Patricio_Larrambebere.html" target="_blank">De Anguyá-i a Trapalanda</a> — Exposición Fundación Klemm, 2017</li><li><a href="https://www.estimarte.com/" target="_blank">ABTE 14vo Aniversario</a> — Collage/cartón, 2012</li></ul>
+        <a class="link-btn" href="https://www.artedelaargentina.com/disciplinas/artista/pintura/patricio-larrambebere" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="cotidianidad memoria participación Eslovaquia extrañamiento">
+      <div class="card-body">
+        <h2>Roman Ondak</h2>
+        <div class="born">Žilina, Eslovaquia, 1966</div>
+        <div class="media">Instalación, escultura, performance, dibujo</div>
+        <div class="desc">Usa elementos y objetos cotidianos en situaciones ligeramente extrañadas o desplazadas, recontextualizándolos. Como un etnógrafo, indaga en su historia personal y el archivo de la memoria humana. Su obra 'Measuring the Universe' (2007) invitó al público a marcar su altura en las paredes del MoMA.</div>
+        <div class="tags"><span class="tag">cotidianidad</span><span class="tag">memoria</span><span class="tag">participación</span><span class="tag">Eslovaquia</span><span class="tag">extrañamiento</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://www.moma.org/artists/31335-roman-ondak" target="_blank">Measuring the Universe</a> — Performance participativa, MoMA, 2007</li><li><a href="https://www.art-collection-telekom.com/en/artists/ondak-roman" target="_blank">Loop</a> — Pabellón Checo/Eslovaco, Bienal de Venecia 2009</li><li><a href="https://www.art-collection-telekom.com/en/artists/ondak-roman" target="_blank">Spirit and Opportunity</a> — Instalación sobre Marte, 2004</li></ul>
+        <a class="link-btn" href="https://www.moma.org/artists/31335-roman-ondak" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="escultura blanda cuerpo textil espacio color performatividad">
+      <div class="card-body">
+        <h2>Marina De Caro</h2>
+        <div class="born">Mar del Plata, Argentina, 1961</div>
+        <div class="media">Escultura blanda, textil, performance, instalación, dibujo</div>
+        <div class="desc">Desarrolla un enfoque multidisciplinario que integra dibujo, escultura blanda y performance para experimentar con nociones de espacio, experiencia corporal, intuición y emoción. Crea esculturas móviles y flexibles que interactúan con el espectador. Investiga cómo el cuerpo percibe y habita el espacio.</div>
+        <div class="tags"><span class="tag">escultura blanda</span><span class="tag">cuerpo</span><span class="tag">textil</span><span class="tag">espacio</span><span class="tag">color</span><span class="tag">performatividad</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://museomoderno.org/en/exhibitions/marina-de-caro-contra-la-gravedad" target="_blank">Contra la gravedad</a> — Retrospectiva, Museo Moderno Buenos Aires</li><li><a href="https://pinta.art/BAphoto/Sections/Special-Project-Marina-De-Caro" target="_blank">Binarios: lenguaje secreto</a> — Performance/fashion show, serie 90s reactivada 2023</li><li><a href="https://docent-art.com/artists/marina-de-caro" target="_blank">Tricot (Habillable)</a> — Escultura blanda textil, 1997-2023</li></ul>
+        <a class="link-btn" href="https://museomoderno.org/en/exhibitions/marina-de-caro-contra-la-gravedad" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+    <div class="card" data-tags="dibujo performance naturaleza fragilidad clima hielo">
+      <div class="card-body">
+        <h2>Valeria Conte Mac Donell</h2>
+        <div class="born">Buenos Aires, 1977</div>
+        <div class="media">Dibujo, instalación, acción performática, obra en papel</div>
+        <div class="desc">Cuestiona los límites del dibujo mediante obras de gran formato realizadas a través de acciones performáticas. Sus trabajos exploran la fragilidad, el clima, la naturaleza y los materiales efímeros (hielo, tejidos que desaparecen bajo el sol). Premio Konex 2022.</div>
+        <div class="tags"><span class="tag">dibujo</span><span class="tag">performance</span><span class="tag">naturaleza</span><span class="tag">fragilidad</span><span class="tag">clima</span><span class="tag">hielo</span></div>
+        <div class="works-title">Obras principales:</div>
+        <ul><li><a href="https://washdiplomat.com/territories-and-subjectivities-erases-lines-raises-questions" target="_blank">Conquest of the Useless</a> — Tejido de hielo que desaparece al sol</li><li><a href="https://mapadelarte.museomoderno.org/en/artistas/conte-mac-donell-valeria" target="_blank">Cómo dejar un barco</a> — Instalación/acción, 2018</li><li><a href="https://mapadelarte.museomoderno.org/en/artistas/conte-mac-donell-valeria" target="_blank">Que el cielo sea el fondo</a> — Serie de dibujos performáticos</li></ul>
+        <a class="link-btn" href="https://mapadelarte.museomoderno.org/en/artistas/conte-mac-donell-valeria" target="_blank">+ Info / Biografía</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    const cards = document.querySelectorAll('.card');
+    let count = 0;
+    cards.forEach(card => {
+      const tags = card.dataset.tags.toLowerCase();
+      let show = false;
+      if (filter === 'all') show = true;
+      else if (filter === 'argentina') show = tags.includes('argentina') || tags.includes('buenos aires') || tags.includes('córdoba') || tags.includes('tucumán') || tags.includes('quilmes') || tags.includes('mar del plata') || tags.includes('mendoza') || tags.includes('salta') || tags.includes('la plata');
+      else show = tags.includes(filter);
+      card.style.display = show ? 'block' : 'none';
+      if (show) count++;
+    });
+    document.getElementById('counter').textContent = count + ' artistas';
+  });
+});
+</script>
+</body>
+</html>
